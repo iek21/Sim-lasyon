@@ -1,0 +1,40 @@
+%implements s0_b0_ekyhi_Update "C"
+
+%function Update(block, system) Output
+%<SLibCGIRAccessLocalVar(26, 0, "")> %% rtb_FilterCoefficient
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_IntegralGain
+%<SLibCGIRAccessLocalVar(47, 0, "")> %% rtb_Add1
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcUpdateFcnOfS0B5 = OpaqueTLCBlockFcn("Update", 0, 5, 0, 6)
+/* Update for UnitDelay: '<S73>/Unit Delay' */
+PVPanelAnn_DW.UnitDelay_DSTATE = rtb_Add1;
+if (%<(SLibCGIRIsSampleHit(3, 0))>) {
+    /* Update for UniformRandomNumber: '<Root>/Uniform Random Number1' */
+    PVPanelAnn_DW.UniformRandomNumber1_NextOutput = (PVPanelAnn_P.UniformRandomNumber1_Maximum - PVPanelAnn_P.UniformRandomNumber1_Minimum) * %<(SLibCGCallSubFcn("rt_urand_Upu32_Yd_f_pw_snf", ["&PVPanelAnn_DW.RandSeed"], 0, 6, 0))> + PVPanelAnn_P.UniformRandomNumber1_Minimum;
+    /* Update for UniformRandomNumber: '<Root>/Uniform Random Number' */
+    PVPanelAnn_DW.UniformRandomNumber_NextOutput = (PVPanelAnn_P.UniformRandomNumber_Maximum - PVPanelAnn_P.UniformRandomNumber_Minimum) * %<(SLibCGCallSubFcn("rt_urand_Upu32_Yd_f_pw_snf", ["&PVPanelAnn_DW.RandSeed_m"], 0, 6, 1))> + PVPanelAnn_P.UniformRandomNumber_Minimum;
+}
+%if !WHITE_SPACE(tlcUpdateFcnOfS0B5)
+/* Update for S-Function (sfun_spssw_discc): '<S82>/State-Space' incorporates:
+ *  Constant: '<S11>/eee'
+ *  Constant: '<S84>/SwitchCurrents'
+ */
+%<tlcUpdateFcnOfS0B5>\
+%endif
+/* Update for DiscreteIntegrator: '<S3>/Filter' */
+PVPanelAnn_DW.Filter_DSTATE += PVPanelAnn_P.Filter_gainval * rtb_FilterCoefficient;
+/* Update for DiscreteIntegrator: '<S3>/Integrator' */
+PVPanelAnn_DW.Integrator_DSTATE += PVPanelAnn_P.Integrator_gainval * rtb_IntegralGain;
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function UpdateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 6, fcnProtoType)>
+%endfunction

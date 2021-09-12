@@ -1,0 +1,30 @@
+%implements s0_b0_ekyhi_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS0B5 = OpaqueTLCBlockFcn("Start", 0, 5, 0, 3)
+%assign tlcStartFcnOfS0B9 = OpaqueTLCBlockFcn("Start", 0, 9, 0, 3)
+%if !WHITE_SPACE(tlcStartFcnOfS0B5)
+/* Start for S-Function (sfun_spssw_discc): '<S82>/State-Space' incorporates:
+ *  Constant: '<S11>/eee'
+ *  Constant: '<S84>/SwitchCurrents'
+ */
+%<tlcStartFcnOfS0B5>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B9)
+/* Start for Scope: '<Root>/Scope' */
+%<tlcStartFcnOfS0B9>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

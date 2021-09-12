@@ -1,0 +1,25 @@
+%implements s0_b0_ekyhi_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcTerminateFcnOfS0B5 = OpaqueTLCBlockFcn("Terminate", 0, 5, 0, 7)
+%if !WHITE_SPACE(tlcTerminateFcnOfS0B5)
+/* Terminate for S-Function (sfun_spssw_discc): '<S82>/State-Space' incorporates:
+ *  Constant: '<S11>/eee'
+ *  Constant: '<S84>/SwitchCurrents'
+ */
+%<tlcTerminateFcnOfS0B5>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 7, fcnProtoType)>
+%endfunction

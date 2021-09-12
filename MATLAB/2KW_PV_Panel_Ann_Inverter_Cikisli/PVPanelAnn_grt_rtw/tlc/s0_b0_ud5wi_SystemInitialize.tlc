@@ -1,0 +1,32 @@
+%implements s0_b0_ud5wi_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcInitializeConditionsFcnOfS0B7 = OpaqueTLCBlockFcn("InitializeConditions", 0, 7, 0, 3)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for UnitDelay: '<S91>/Unit Delay' */
+PVPanelAnn_DW.UnitDelay_DSTATE = PVPanelAnn_P.UnitDelay_InitialCondition;
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS0B7)
+/* InitializeConditions for S-Function (sfun_spssw_discc): '<S101>/State-Space' incorporates:
+ *  Constant: '<S103>/SwitchCurrents'
+ *  Constant: '<S21>/eee'
+ */
+%<tlcInitializeConditionsFcnOfS0B7>\
+%endif
+/* InitializeConditions for DiscreteIntegrator: '<S5>/Integrator' */
+PVPanelAnn_DW.Integrator_DSTATE = PVPanelAnn_P.Integrator_IC;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 3, fcnProtoType)>
+%endfunction

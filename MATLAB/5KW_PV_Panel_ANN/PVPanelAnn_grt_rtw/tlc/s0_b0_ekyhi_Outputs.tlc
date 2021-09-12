@@ -1,0 +1,482 @@
+%implements s0_b0_ekyhi_Outputs "C"
+
+%function Outputs(block, system) Output
+%<SLibCGIRAccessLocalVar(61, 0, "")> %% rtb_DotProduct_a
+%<SLibCGIRAccessLocalVar(62, 0, "")> %% rtb_DotProduct_p
+%<SLibCGIRAccessLocalVar(63, 0, "")> %% rtb_DotProduct_er
+%<SLibCGIRAccessLocalVar(52, 0, "")> %% rtb_donotdeletethisgain
+%<SLibCGIRAccessLocalVar(54, 0, "")> %% rtb_Vd
+%<SLibCGIRAccessLocalVar(26, 0, "")> %% rtb_FilterCoefficient
+%<SLibCGIRAccessLocalVar(47, 0, "")> %% rtb_Add1
+%<SLibCGIRAccessLocalVar(27, 0, "")> %% rtb_IntegralGain
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real_T rtb_Tcell_K;
+real_T rtb_Sum1[10];
+real_T rtb_DeadZone;
+real_T tmp[10];
+int32_T i;
+real_T tmp_0;
+real_T tmp_1;
+real_T tmp_2;
+real_T tmp_3;
+real_T rtb_Addminy_idx_0;
+real_T rtb_Addminy_idx_1;
+%closefile localVarDecl
+%assign tlcOutputsFcnOfS0B5 = OpaqueTLCBlockFcn("Outputs", 0, 5, 0, 5)
+%assign tlcOutputsFcnOfS0B9 = OpaqueTLCBlockFcn("Outputs", 0, 9, 0, 5)
+/* UnitDelay: '<S73>/Unit Delay' */
+PVPanelAnn_B.UnitDelay = PVPanelAnn_DW.UnitDelay_DSTATE;
+if (%<(SLibCGIRIsSampleHit(3, 0))>) {
+    /* UniformRandomNumber: '<Root>/Uniform Random Number1' */
+    PVPanelAnn_B.UniformRandomNumber1 = PVPanelAnn_DW.UniformRandomNumber1_NextOutput;
+    /* Sum: '<S69>/Add2' incorporates:
+ *  Constant: '<S69>/0_K'
+ */
+    rtb_Tcell_K = PVPanelAnn_B.UniformRandomNumber1 + PVPanelAnn_P.u_K_Value;
+    /* UniformRandomNumber: '<Root>/Uniform Random Number' */
+    PVPanelAnn_B.UniformRandomNumber = PVPanelAnn_DW.UniformRandomNumber_NextOutput;
+    /* Gain: '<S69>/1//Sref' */
+    PVPanelAnn_B.SSref = PVPanelAnn_P.uSref_Gain * PVPanelAnn_B.UniformRandomNumber;
+    /* Product: '<S69>/Product1' incorporates:
+ *  Constant: '<S69>/IL_module'
+ *  Constant: '<S69>/Tref_K'
+ *  Gain: '<S69>/Npar'
+ *  Gain: '<S69>/alpha_Isc'
+ *  Sum: '<S69>/Add'
+ *  Sum: '<S69>/Add3'
+ */
+    PVPanelAnn_B.IL = ((rtb_Tcell_K - PVPanelAnn_P.Tref_K_Value) * PVPanelAnn_P.alpha_Isc_Gain + PVPanelAnn_P.IL_module_Value) * PVPanelAnn_P.PVArray_Npar * PVPanelAnn_B.SSref;
+}
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B5)
+/* S-Function (sfun_spssw_discc): '<S82>/State-Space' incorporates:
+ *  Constant: '<S11>/eee'
+ *  Constant: '<S84>/SwitchCurrents'
+ */
+%<tlcOutputsFcnOfS0B5>\
+%endif
+/* Gain: '<S1>/do not delete this gain' */
+rtb_DotProduct_a = PVPanelAnn_P.donotdeletethisgain_Gain * PVPanelAnn_B.StateSpace_o1[4];
+/* Gain: '<S70>/do not delete this gain' */
+rtb_donotdeletethisgain = PVPanelAnn_P.donotdeletethisgain_Gain_i * PVPanelAnn_B.StateSpace_o1[5];
+/* Gain: '<S8>/do not delete this gain' */
+rtb_DotProduct_p = PVPanelAnn_P.donotdeletethisgain_Gain_iy * PVPanelAnn_B.StateSpace_o1[2];
+/* Gain: '<S72>/do not delete this gain' */
+rtb_Vd = PVPanelAnn_P.donotdeletethisgain_Gain_p * PVPanelAnn_B.StateSpace_o1[3];
+/* Product: '<Root>/Divide' */
+rtb_DotProduct_er = rtb_Vd * rtb_donotdeletethisgain;
+%if !WHITE_SPACE(tlcOutputsFcnOfS0B9)
+/* Scope: '<Root>/Scope' */
+%<tlcOutputsFcnOfS0B9>\
+%endif
+/* Gain: '<S62>/range y // range x' */
+rtb_DeadZone = PVPanelAnn_P.mapminmax_ymax - PVPanelAnn_P.mapminmax_ymin;
+/* Bias: '<S62>/Add min y' incorporates:
+ *  Bias: '<S62>/Subtract min x'
+ *  Gain: '<S62>/range y // range x'
+ */
+rtb_Addminy_idx_0 = rtb_DeadZone / (PVPanelAnn_P.mapminmax_xmax[0] - PVPanelAnn_P.mapminmax_xmin[0]) * (PVPanelAnn_B.UniformRandomNumber + -PVPanelAnn_P.mapminmax_xmin[0]) + PVPanelAnn_P.mapminmax_ymin;
+rtb_Addminy_idx_1 = rtb_DeadZone / (PVPanelAnn_P.mapminmax_xmax[1] - PVPanelAnn_P.mapminmax_xmin[1]) * (PVPanelAnn_B.UniformRandomNumber1 + -PVPanelAnn_P.mapminmax_xmin[1]) + PVPanelAnn_P.mapminmax_ymin;
+rtb_DeadZone = rtb_DeadZone / (PVPanelAnn_P.mapminmax_xmax[2] - PVPanelAnn_P.mapminmax_xmin[2]) * (rtb_donotdeletethisgain + -PVPanelAnn_P.mapminmax_xmin[2]) + PVPanelAnn_P.mapminmax_ymin;
+/* DotProduct: '<S22>/Dot Product' incorporates:
+ *  Constant: '<S20>/IW{1,1}(1,:)''
+ */
+rtb_DotProduct_er = (PVPanelAnn_P.IW111_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW111_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW111_Value[2] * rtb_DeadZone;
+/* DotProduct: '<S24>/Dot Product' incorporates:
+ *  Constant: '<S20>/IW{1,1}(2,:)''
+ */
+rtb_DotProduct_p = (PVPanelAnn_P.IW112_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW112_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW112_Value[2] * rtb_DeadZone;
+/* DotProduct: '<S25>/Dot Product' incorporates:
+ *  Constant: '<S20>/IW{1,1}(3,:)''
+ */
+rtb_DotProduct_a = (PVPanelAnn_P.IW113_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW113_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW113_Value[2] * rtb_DeadZone;
+/* Sum: '<S13>/netsum' incorporates:
+ *  Constant: '<S20>/IW{1,1}(10,:)''
+ *  Constant: '<S20>/IW{1,1}(4,:)''
+ *  Constant: '<S20>/IW{1,1}(5,:)''
+ *  Constant: '<S20>/IW{1,1}(6,:)''
+ *  Constant: '<S20>/IW{1,1}(7,:)''
+ *  Constant: '<S20>/IW{1,1}(8,:)''
+ *  Constant: '<S20>/IW{1,1}(9,:)''
+ *  DotProduct: '<S23>/Dot Product'
+ *  DotProduct: '<S26>/Dot Product'
+ *  DotProduct: '<S27>/Dot Product'
+ *  DotProduct: '<S28>/Dot Product'
+ *  DotProduct: '<S29>/Dot Product'
+ *  DotProduct: '<S30>/Dot Product'
+ *  DotProduct: '<S31>/Dot Product'
+ */
+tmp[0] = rtb_DotProduct_er;
+tmp[1] = rtb_DotProduct_p;
+tmp[2] = rtb_DotProduct_a;
+tmp[3] = (PVPanelAnn_P.IW114_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW114_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW114_Value[2] * rtb_DeadZone;
+tmp[4] = (PVPanelAnn_P.IW115_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW115_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW115_Value[2] * rtb_DeadZone;
+tmp[5] = (PVPanelAnn_P.IW116_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW116_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW116_Value[2] * rtb_DeadZone;
+tmp[6] = (PVPanelAnn_P.IW117_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW117_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW117_Value[2] * rtb_DeadZone;
+tmp[7] = (PVPanelAnn_P.IW118_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW118_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW118_Value[2] * rtb_DeadZone;
+tmp[8] = (PVPanelAnn_P.IW119_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW119_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW119_Value[2] * rtb_DeadZone;
+tmp[9] = (PVPanelAnn_P.IW1110_Value[0] * rtb_Addminy_idx_0 + PVPanelAnn_P.IW1110_Value[1] * rtb_Addminy_idx_1) + PVPanelAnn_P.IW1110_Value[2] * rtb_DeadZone;
+/* DotProduct: '<S43>/Dot Product' */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    /* Sum: '<S21>/Sum1' incorporates:
+ *  Constant: '<S13>/b{1}'
+ *  Constant: '<S21>/one'
+ *  Constant: '<S21>/one1'
+ *  Gain: '<S21>/Gain'
+ *  Gain: '<S21>/Gain1'
+ *  Math: '<S21>/Exp'
+ *  Math: '<S21>/Reciprocal'
+ *  Sum: '<S13>/netsum'
+ *  Sum: '<S21>/Sum'
+ *
+ * About '<S21>/Exp':
+ *  Operator: exp
+ *
+ * About '<S21>/Reciprocal':
+ *  Operator: reciprocal
+ */
+    rtb_Addminy_idx_0 = 1.0 / (exp((tmp[i] + PVPanelAnn_P.b1_Value[i]) * PVPanelAnn_P.Gain_Gain) + PVPanelAnn_P.one_Value) * PVPanelAnn_P.Gain1_Gain - PVPanelAnn_P.one1_Value;
+    /* DotProduct: '<S43>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(8,:)''
+ */
+    rtb_DeadZone += PVPanelAnn_P.IW218_Value[i] * rtb_Addminy_idx_0;
+    /* Sum: '<S21>/Sum1' incorporates:
+ *  Sum: '<S13>/netsum'
+ */
+    rtb_Sum1[i] = rtb_Addminy_idx_0;
+}
+/* DotProduct: '<S43>/Dot Product' */
+rtb_DotProduct_er = rtb_DeadZone;
+/* DotProduct: '<S44>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(9,:)''
+ */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    rtb_DeadZone += PVPanelAnn_P.IW219_Value[i] * rtb_Sum1[i];
+}
+rtb_DotProduct_p = rtb_DeadZone;
+/* End of DotProduct: '<S44>/Dot Product' */
+
+/* DotProduct: '<S36>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(10,:)''
+ */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    rtb_DeadZone += PVPanelAnn_P.IW2110_Value[i] * rtb_Sum1[i];
+}
+rtb_DotProduct_a = rtb_DeadZone;
+/* End of DotProduct: '<S36>/Dot Product' */
+
+/* DotProduct: '<S35>/Dot Product' */
+rtb_DeadZone = 0.0;
+/* DotProduct: '<S37>/Dot Product' */
+rtb_Addminy_idx_0 = 0.0;
+/* DotProduct: '<S38>/Dot Product' */
+rtb_Addminy_idx_1 = 0.0;
+/* DotProduct: '<S39>/Dot Product' */
+tmp_0 = 0.0;
+/* DotProduct: '<S40>/Dot Product' */
+tmp_1 = 0.0;
+/* DotProduct: '<S41>/Dot Product' */
+tmp_2 = 0.0;
+/* DotProduct: '<S42>/Dot Product' */
+tmp_3 = 0.0;
+for (i = 0; i < 10; i++) {
+    /* DotProduct: '<S35>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(1,:)''
+ */
+    rtb_DeadZone += PVPanelAnn_P.IW211_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S37>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(2,:)''
+ */
+    rtb_Addminy_idx_0 += PVPanelAnn_P.IW212_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S38>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(3,:)''
+ */
+    rtb_Addminy_idx_1 += PVPanelAnn_P.IW213_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S39>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(4,:)''
+ */
+    tmp_0 += PVPanelAnn_P.IW214_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S40>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(5,:)''
+ */
+    tmp_1 += PVPanelAnn_P.IW215_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S41>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(6,:)''
+ */
+    tmp_2 += PVPanelAnn_P.IW216_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S42>/Dot Product' incorporates:
+ *  Constant: '<S33>/IW{2,1}(7,:)''
+ */
+    tmp_3 += PVPanelAnn_P.IW217_Value[i] * rtb_Sum1[i];
+}
+/* Sum: '<S14>/netsum' incorporates:
+ *  DotProduct: '<S35>/Dot Product'
+ *  DotProduct: '<S37>/Dot Product'
+ *  DotProduct: '<S38>/Dot Product'
+ *  DotProduct: '<S39>/Dot Product'
+ *  DotProduct: '<S40>/Dot Product'
+ *  DotProduct: '<S41>/Dot Product'
+ *  DotProduct: '<S42>/Dot Product'
+ */
+tmp[0] = rtb_DeadZone;
+tmp[1] = rtb_Addminy_idx_0;
+tmp[2] = rtb_Addminy_idx_1;
+tmp[3] = tmp_0;
+tmp[4] = tmp_1;
+tmp[5] = tmp_2;
+tmp[6] = tmp_3;
+tmp[7] = rtb_DotProduct_er;
+tmp[8] = rtb_DotProduct_p;
+tmp[9] = rtb_DotProduct_a;
+/* DotProduct: '<S56>/Dot Product' */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    /* Sum: '<S34>/Sum1' incorporates:
+ *  Constant: '<S14>/b{2}'
+ *  Constant: '<S34>/one'
+ *  Constant: '<S34>/one1'
+ *  Gain: '<S34>/Gain'
+ *  Gain: '<S34>/Gain1'
+ *  Math: '<S34>/Exp'
+ *  Math: '<S34>/Reciprocal'
+ *  Sum: '<S14>/netsum'
+ *  Sum: '<S34>/Sum'
+ *
+ * About '<S34>/Exp':
+ *  Operator: exp
+ *
+ * About '<S34>/Reciprocal':
+ *  Operator: reciprocal
+ */
+    rtb_Addminy_idx_0 = 1.0 / (exp((tmp[i] + PVPanelAnn_P.b2_Value[i]) * PVPanelAnn_P.Gain_Gain_o) + PVPanelAnn_P.one_Value_e) * PVPanelAnn_P.Gain1_Gain_m - PVPanelAnn_P.one1_Value_a;
+    /* DotProduct: '<S56>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(8,:)''
+ */
+    rtb_DeadZone += PVPanelAnn_P.IW328_Value[i] * rtb_Addminy_idx_0;
+    /* Sum: '<S14>/netsum' */
+    rtb_Sum1[i] = rtb_Addminy_idx_0;
+}
+/* DotProduct: '<S56>/Dot Product' */
+rtb_DotProduct_er = rtb_DeadZone;
+/* DotProduct: '<S57>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(9,:)''
+ */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    rtb_DeadZone += PVPanelAnn_P.IW329_Value[i] * rtb_Sum1[i];
+}
+rtb_DotProduct_p = rtb_DeadZone;
+/* End of DotProduct: '<S57>/Dot Product' */
+
+/* DotProduct: '<S49>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(10,:)''
+ */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    rtb_DeadZone += PVPanelAnn_P.IW3210_Value[i] * rtb_Sum1[i];
+}
+rtb_DotProduct_a = rtb_DeadZone;
+/* End of DotProduct: '<S49>/Dot Product' */
+
+/* DotProduct: '<S48>/Dot Product' */
+rtb_DeadZone = 0.0;
+/* DotProduct: '<S50>/Dot Product' */
+rtb_Addminy_idx_0 = 0.0;
+/* DotProduct: '<S51>/Dot Product' */
+rtb_Addminy_idx_1 = 0.0;
+/* DotProduct: '<S52>/Dot Product' */
+tmp_0 = 0.0;
+/* DotProduct: '<S53>/Dot Product' */
+tmp_1 = 0.0;
+/* DotProduct: '<S54>/Dot Product' */
+tmp_2 = 0.0;
+/* DotProduct: '<S55>/Dot Product' */
+tmp_3 = 0.0;
+for (i = 0; i < 10; i++) {
+    /* DotProduct: '<S48>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(1,:)''
+ */
+    rtb_DeadZone += PVPanelAnn_P.IW321_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S50>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(2,:)''
+ */
+    rtb_Addminy_idx_0 += PVPanelAnn_P.IW322_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S51>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(3,:)''
+ */
+    rtb_Addminy_idx_1 += PVPanelAnn_P.IW323_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S52>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(4,:)''
+ */
+    tmp_0 += PVPanelAnn_P.IW324_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S53>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(5,:)''
+ */
+    tmp_1 += PVPanelAnn_P.IW325_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S54>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(6,:)''
+ */
+    tmp_2 += PVPanelAnn_P.IW326_Value[i] * rtb_Sum1[i];
+    /* DotProduct: '<S55>/Dot Product' incorporates:
+ *  Constant: '<S46>/IW{3,2}(7,:)''
+ */
+    tmp_3 += PVPanelAnn_P.IW327_Value[i] * rtb_Sum1[i];
+}
+/* Sum: '<S15>/netsum' incorporates:
+ *  DotProduct: '<S48>/Dot Product'
+ *  DotProduct: '<S50>/Dot Product'
+ *  DotProduct: '<S51>/Dot Product'
+ *  DotProduct: '<S52>/Dot Product'
+ *  DotProduct: '<S53>/Dot Product'
+ *  DotProduct: '<S54>/Dot Product'
+ *  DotProduct: '<S55>/Dot Product'
+ */
+tmp[0] = rtb_DeadZone;
+tmp[1] = rtb_Addminy_idx_0;
+tmp[2] = rtb_Addminy_idx_1;
+tmp[3] = tmp_0;
+tmp[4] = tmp_1;
+tmp[5] = tmp_2;
+tmp[6] = tmp_3;
+tmp[7] = rtb_DotProduct_er;
+tmp[8] = rtb_DotProduct_p;
+tmp[9] = rtb_DotProduct_a;
+/* DotProduct: '<S61>/Dot Product' */
+rtb_DeadZone = 0.0;
+for (i = 0; i < 10; i++) {
+    /* DotProduct: '<S61>/Dot Product' incorporates:
+ *  Constant: '<S15>/b{3}'
+ *  Constant: '<S47>/one'
+ *  Constant: '<S47>/one1'
+ *  Constant: '<S59>/IW{4,3}(1,:)''
+ *  Gain: '<S47>/Gain'
+ *  Gain: '<S47>/Gain1'
+ *  Math: '<S47>/Exp'
+ *  Math: '<S47>/Reciprocal'
+ *  Sum: '<S15>/netsum'
+ *  Sum: '<S47>/Sum'
+ *  Sum: '<S47>/Sum1'
+ *
+ * About '<S47>/Exp':
+ *  Operator: exp
+ *
+ * About '<S47>/Reciprocal':
+ *  Operator: reciprocal
+ */
+    rtb_DeadZone += (1.0 / (exp((tmp[i] + PVPanelAnn_P.b3_Value[i]) * PVPanelAnn_P.Gain_Gain_b) + PVPanelAnn_P.one_Value_m) * PVPanelAnn_P.Gain1_Gain_a - PVPanelAnn_P.one1_Value_g) * PVPanelAnn_P.IW431_Value[i];
+}
+/* Sum: '<Root>/Subtract' incorporates:
+ *  Bias: '<S63>/Add min x'
+ *  Bias: '<S63>/Subtract min y'
+ *  Constant: '<S16>/b{4}'
+ *  DotProduct: '<S61>/Dot Product'
+ *  Gain: '<S63>/Divide by range y'
+ *  Sum: '<S16>/netsum'
+ */
+rtb_DeadZone = ((PVPanelAnn_P.mapminmax_reverse_xmax - PVPanelAnn_P.mapminmax_reverse_xmin) / (PVPanelAnn_P.mapminmax_reverse_ymax - PVPanelAnn_P.mapminmax_reverse_ymin) * ((rtb_DeadZone + PVPanelAnn_P.b4_Value) + -PVPanelAnn_P.mapminmax_reverse_ymin) + PVPanelAnn_P.mapminmax_reverse_xmin) - rtb_Vd;
+/* DeadZone: '<Root>/Dead Zone' */
+if (rtb_DeadZone > PVPanelAnn_P.DeadZone_End) {
+    rtb_DeadZone -= PVPanelAnn_P.DeadZone_End;
+} else if (rtb_DeadZone >= PVPanelAnn_P.DeadZone_Start) {
+    rtb_DeadZone = 0.0;
+} else {
+    rtb_DeadZone -= PVPanelAnn_P.DeadZone_Start;
+}
+/* End of DeadZone: '<Root>/Dead Zone' */
+
+/* Gain: '<S3>/Filter Coefficient' incorporates:
+ *  DiscreteIntegrator: '<S3>/Filter'
+ *  Gain: '<S3>/Derivative Gain'
+ *  Sum: '<S3>/SumD'
+ */
+rtb_FilterCoefficient = (PVPanelAnn_P.DiscretePIDController_D * rtb_DeadZone - PVPanelAnn_DW.Filter_DSTATE) * PVPanelAnn_P.DiscretePIDController_N;
+/* Gain: '<S3>/Integral Gain' */
+rtb_IntegralGain = PVPanelAnn_P.DiscretePIDController_I * rtb_DeadZone;
+/* Sum: '<S6>/Add1' incorporates:
+ *  Constant: '<S6>/Rs_array_'
+ *  Product: '<S6>/Product2'
+ */
+rtb_Vd += 0.39383 * PVPanelAnn_P.PVArray_Nser / PVPanelAnn_P.PVArray_Npar * rtb_donotdeletethisgain;
+if (%<(SLibCGIRIsSampleHit(3, 0))>) {
+    /* Product: '<S66>/Product3' incorporates:
+ *  Constant: '<S66>/Tref_K2'
+ */
+    rtb_Addminy_idx_0 = rtb_Tcell_K / PVPanelAnn_P.Tref_K2_Value;
+    /* Gain: '<S66>/VT_ref_array' */
+    PVPanelAnn_B.VT = 1.5124515334838344 * PVPanelAnn_P.PVArray_Nser * rtb_Addminy_idx_0;
+    /* Product: '<S66>/Product4' incorporates:
+ *  Constant: '<S66>/Tref_K1'
+ *  Constant: '<S66>/one1'
+ *  Constant: '<S75>/EgRef'
+ *  Fcn: '<S66>/Fcn'
+ *  Gain: '<S66>/EgRef'
+ *  Gain: '<S66>/I0_array'
+ *  Gain: '<S66>/dEgdT'
+ *  Gain: '<S75>/k1'
+ *  Math: '<S75>/Math Function'
+ *  Product: '<S75>/Product'
+ *  Sum: '<S66>/Add3'
+ *  Sum: '<S66>/Add4'
+ *  Sum: '<S75>/Add'
+ *
+ * About '<S75>/Math Function':
+ *  Operator: exp
+ */
+    PVPanelAnn_B.Product4 = exp(PVPanelAnn_P.EgRef_Value - ((rtb_Tcell_K - PVPanelAnn_P.Tref_K1_Value) * PVPanelAnn_P.dEgdT_Gain + PVPanelAnn_P.one1_Value_d) * PVPanelAnn_P.EgRef_Gain / (PVPanelAnn_P.k1_Gain * rtb_Tcell_K)) * (2.9259E-10 * PVPanelAnn_P.PVArray_Npar * %<(SLibCGCallSubFcn("rt_powd_snf", ["rtb_Addminy_idx_0", "3.0"], 0, 5, 0))>);
+}
+/* Sum: '<S66>/Add1' incorporates:
+ *  Constant: '<S66>/Rsh_array'
+ *  Constant: '<S66>/Rsh_array_5%<"\%Sref\'\
+ *  Constant: \'<S66>/one\'\
+ *  Math: \'<S66>/Math Function\'\
+ *  Product: \'<S66>/Product\'\
+ *  Product: \'<S66>/Product1\'\
+ *  Product: \'<S66>/Product2\'\
+ *  Product: \'<S66>/Product5\'\
+ *  Sum: \'<S66>/Add\'\
+ *\
+ * About \'<S66>/Math Function\':\
+ *  Operator: exp\
+"> */
+rtb_Add1 = ((exp(1.0 / PVPanelAnn_B.VT * rtb_Vd) - PVPanelAnn_P.one_Value_p) * PVPanelAnn_B.Product4 + rtb_Vd / (313.3991 * PVPanelAnn_P.PVArray_Nser / PVPanelAnn_P.PVArray_Npar) * PVPanelAnn_B.SSref) - rtb_Vd / PVPanelAnn_P.Rsh_array_5Sref_Value;
+/* Sum: '<Root>/Subtract1' incorporates:
+ *  Constant: '<Root>/Constant'
+ *  DiscreteIntegrator: '<S3>/Integrator'
+ *  Gain: '<S3>/Proportional Gain'
+ *  Sum: '<S3>/Sum'
+ */
+PVPanelAnn_B.Subtract1 = PVPanelAnn_P.Constant_Value - ((PVPanelAnn_P.DiscretePIDController_P * rtb_DeadZone + PVPanelAnn_DW.Integrator_DSTATE) + rtb_FilterCoefficient);
+/* DataTypeConversion: '<S7>/Data Type Conversion' incorporates:
+ *  Clock: '<S80>/Clock'
+ *  Constant: '<S78>/Constant'
+ *  Constant: '<S80>/Constant2'
+ *  Constant: '<S80>/Constant4'
+ *  Fcn: '<S7>/Fcn'
+ *  Fcn: '<S80>/Fcn1'
+ *  Gain: '<S80>/1\ib2'
+ *  Logic: '<S7>/Logical Operator'
+ *  Math: '<S80>/Math Function1'
+ *  RelationalOperator: '<S78>/Compare'
+ *  RelationalOperator: '<S7>/Relational Operator'
+ *  Sum: '<S80>/Add2'
+ */
+PVPanelAnn_B.DataTypeConversion = ((PVPanelAnn_B.Subtract1 != PVPanelAnn_P.Constant_Value_d) && (PVPanelAnn_B.Subtract1 >= ((%<(SLibCGCallSubFcn("rt_remd_snf", ["%<(SLibCG_SE(LibGetT()))> + PVPanelAnn_P.Constant4_Value", "PVPanelAnn_P.Constant2_Value"], 0, 5, 1))> * PVPanelAnn_P.uib2_Gain * 2.0 - 1.0) + 1.0) * 0.5));
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 5, fcnProtoType)>
+%endfunction

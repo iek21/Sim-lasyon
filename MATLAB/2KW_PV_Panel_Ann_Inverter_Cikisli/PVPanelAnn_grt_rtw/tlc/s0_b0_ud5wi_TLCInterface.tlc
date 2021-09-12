@@ -1,0 +1,1380 @@
+%implements s0_b0_ud5wi_TLCInterface "C"
+
+%function getInputAddr_0_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_0_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_7_0_2_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.AC"
+%endfunction
+
+%function getInput_0_7_0_2_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.AC"
+%endfunction
+
+%function getInputAddr_0_7_0_2_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.IL"
+%endfunction
+
+%function getInput_0_7_0_2_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.IL"
+%endfunction
+
+%function getInputAddr_0_7_0_2_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInput_0_7_0_2_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInputAddr_0_7_0_2_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInput_0_7_0_2_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInputAddr_0_7_0_2_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInput_0_7_0_2_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInputAddr_0_7_0_2_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInput_0_7_0_2_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInputAddr_0_7_0_2_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInput_0_7_0_2_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInputAddr_0_7_0_2_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInput_0_7_0_2_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInputAddr_0_7_0_2_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getInput_0_7_0_2_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_0_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_0_7_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_2_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_0_7_0_2_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParam_0_7_0_2_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_2_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParam_0_7_0_2_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_2_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParam_0_7_0_2_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_2_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParam_0_7_0_2_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_2_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getParam_0_7_0_2_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getInputAddr_0_11_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "&rtb_DotProduct_p"
+%endfunction
+
+%function getInput_0_11_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "rtb_DotProduct_p"
+%endfunction
+
+%function getInputAddr_0_11_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(52, 0, "")> %% rtb_donotdeletethisgain
+
+%return "&rtb_donotdeletethisgain"
+%endfunction
+
+%function getInput_0_11_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(52, 0, "")> %% rtb_donotdeletethisgain
+
+%return "rtb_donotdeletethisgain"
+%endfunction
+
+%function getDWorkAddr_0_11_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope1_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_11_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope1_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_12_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "&rtb_DotProduct_ip"
+%endfunction
+
+%function getInput_0_12_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "rtb_DotProduct_ip"
+%endfunction
+
+%function getDWorkAddr_0_12_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope2_PWORK"
+%endfunction
+
+%function getDWork_0_12_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope2_PWORK"
+%endfunction
+
+%function getInputAddr_0_13_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "&rtb_DotProduct_ip"
+%endfunction
+
+%function getInput_0_13_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "rtb_DotProduct_ip"
+%endfunction
+
+%function getInputAddr_0_13_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(53, 0, "")> %% rtb_Vd
+
+%return "&rtb_Vd"
+%endfunction
+
+%function getInput_0_13_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(53, 0, "")> %% rtb_Vd
+
+%return "rtb_Vd"
+%endfunction
+
+%function getDWorkAddr_0_13_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope3_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_13_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope3_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_14_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.Constant2_Value"
+%endfunction
+
+%function getInput_0_14_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.Constant2_Value"
+%endfunction
+
+%function getInputAddr_0_14_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.Constant1_Value"
+%endfunction
+
+%function getInput_0_14_0_2_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.Constant1_Value"
+%endfunction
+
+%function getDWorkAddr_0_14_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope4_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_14_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope4_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_15_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "&rtb_DotProduct_p"
+%endfunction
+
+%function getInput_0_15_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "rtb_DotProduct_p"
+%endfunction
+
+%function getDWorkAddr_0_15_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope6_PWORK"
+%endfunction
+
+%function getDWork_0_15_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope6_PWORK"
+%endfunction
+
+%function getInputAddr_0_93_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(67, 0, "")> %% rtb_donotdeletethisgain_a
+
+%return "&rtb_donotdeletethisgain_a"
+%endfunction
+
+%function getInput_0_93_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(67, 0, "")> %% rtb_donotdeletethisgain_a
+
+%return "rtb_donotdeletethisgain_a"
+%endfunction
+
+%function getDWorkAddr_0_93_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope5_PWORK"
+%endfunction
+
+%function getDWork_0_93_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope5_PWORK"
+%endfunction
+
+%function getDWorkAddr_0_111_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope7_PWORK"
+%endfunction
+
+%function getDWork_0_111_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope7_PWORK"
+%endfunction
+
+%function getDWorkAddr_0_112_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope8_PWORK"
+%endfunction
+
+%function getDWork_0_112_0_2_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope8_PWORK"
+%endfunction
+
+%function getInputAddr_0_7_0_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_0_7_0_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_7_0_3_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.AC"
+%endfunction
+
+%function getInput_0_7_0_3_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.AC"
+%endfunction
+
+%function getInputAddr_0_7_0_3_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.IL"
+%endfunction
+
+%function getInput_0_7_0_3_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.IL"
+%endfunction
+
+%function getInputAddr_0_7_0_3_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInput_0_7_0_3_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInputAddr_0_7_0_3_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInput_0_7_0_3_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInputAddr_0_7_0_3_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInput_0_7_0_3_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInputAddr_0_7_0_3_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInput_0_7_0_3_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInputAddr_0_7_0_3_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInput_0_7_0_3_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInputAddr_0_7_0_3_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInput_0_7_0_3_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInputAddr_0_7_0_3_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getInput_0_7_0_3_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_0_7_0_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_0_7_0_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_3_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_3_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_3_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_3_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_0_7_0_3_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParam_0_7_0_3_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_3_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParam_0_7_0_3_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_3_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParam_0_7_0_3_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_3_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParam_0_7_0_3_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_3_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getParam_0_7_0_3_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getInputAddr_0_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_0_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_7_0_4_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.AC"
+%endfunction
+
+%function getInput_0_7_0_4_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.AC"
+%endfunction
+
+%function getInputAddr_0_7_0_4_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.IL"
+%endfunction
+
+%function getInput_0_7_0_4_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.IL"
+%endfunction
+
+%function getInputAddr_0_7_0_4_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInput_0_7_0_4_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInputAddr_0_7_0_4_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInput_0_7_0_4_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInputAddr_0_7_0_4_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInput_0_7_0_4_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInputAddr_0_7_0_4_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInput_0_7_0_4_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInputAddr_0_7_0_4_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInput_0_7_0_4_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInputAddr_0_7_0_4_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInput_0_7_0_4_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInputAddr_0_7_0_4_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getInput_0_7_0_4_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_0_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_0_7_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_4_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_4_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_0_7_0_4_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParam_0_7_0_4_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_4_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParam_0_7_0_4_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_4_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParam_0_7_0_4_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_4_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParam_0_7_0_4_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_4_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getParam_0_7_0_4_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getInputAddr_0_11_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "&rtb_DotProduct_p"
+%endfunction
+
+%function getInput_0_11_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "rtb_DotProduct_p"
+%endfunction
+
+%function getInputAddr_0_11_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(52, 0, "")> %% rtb_donotdeletethisgain
+
+%return "&rtb_donotdeletethisgain"
+%endfunction
+
+%function getInput_0_11_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(52, 0, "")> %% rtb_donotdeletethisgain
+
+%return "rtb_donotdeletethisgain"
+%endfunction
+
+%function getDWorkAddr_0_11_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope1_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_11_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope1_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_12_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "&rtb_DotProduct_ip"
+%endfunction
+
+%function getInput_0_12_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "rtb_DotProduct_ip"
+%endfunction
+
+%function getDWorkAddr_0_12_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope2_PWORK"
+%endfunction
+
+%function getDWork_0_12_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope2_PWORK"
+%endfunction
+
+%function getInputAddr_0_13_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "&rtb_DotProduct_ip"
+%endfunction
+
+%function getInput_0_13_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(65, 0, "")> %% rtb_DotProduct_ip
+
+%return "rtb_DotProduct_ip"
+%endfunction
+
+%function getInputAddr_0_13_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(53, 0, "")> %% rtb_Vd
+
+%return "&rtb_Vd"
+%endfunction
+
+%function getInput_0_13_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(53, 0, "")> %% rtb_Vd
+
+%return "rtb_Vd"
+%endfunction
+
+%function getDWorkAddr_0_13_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope3_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_13_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope3_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_14_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.Constant2_Value"
+%endfunction
+
+%function getInput_0_14_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.Constant2_Value"
+%endfunction
+
+%function getInputAddr_0_14_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.Constant1_Value"
+%endfunction
+
+%function getInput_0_14_0_4_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.Constant1_Value"
+%endfunction
+
+%function getDWorkAddr_0_14_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope4_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_14_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope4_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_15_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "&rtb_DotProduct_p"
+%endfunction
+
+%function getInput_0_15_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(64, 0, "")> %% rtb_DotProduct_p
+
+%return "rtb_DotProduct_p"
+%endfunction
+
+%function getDWorkAddr_0_15_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope6_PWORK"
+%endfunction
+
+%function getDWork_0_15_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope6_PWORK"
+%endfunction
+
+%function getInputAddr_0_93_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(67, 0, "")> %% rtb_donotdeletethisgain_a
+
+%return "&rtb_donotdeletethisgain_a"
+%endfunction
+
+%function getInput_0_93_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+%<SLibCGIRAccessLocalVar(67, 0, "")> %% rtb_donotdeletethisgain_a
+
+%return "rtb_donotdeletethisgain_a"
+%endfunction
+
+%function getDWorkAddr_0_93_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope5_PWORK"
+%endfunction
+
+%function getDWork_0_93_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope5_PWORK"
+%endfunction
+
+%function getOutputAddr_0_97_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getOutput_0_97_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return ""
+%endfunction
+
+%function getDWorkAddr_0_111_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope7_PWORK"
+%endfunction
+
+%function getDWork_0_111_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope7_PWORK"
+%endfunction
+
+%function getDWorkAddr_0_112_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.Scope8_PWORK"
+%endfunction
+
+%function getDWork_0_112_0_4_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.Scope8_PWORK"
+%endfunction
+
+%function getInputAddr_0_7_0_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_0_7_0_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_7_0_5_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.AC"
+%endfunction
+
+%function getInput_0_7_0_5_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.AC"
+%endfunction
+
+%function getInputAddr_0_7_0_5_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.IL"
+%endfunction
+
+%function getInput_0_7_0_5_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.IL"
+%endfunction
+
+%function getInputAddr_0_7_0_5_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInput_0_7_0_5_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInputAddr_0_7_0_5_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInput_0_7_0_5_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInputAddr_0_7_0_5_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInput_0_7_0_5_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInputAddr_0_7_0_5_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInput_0_7_0_5_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInputAddr_0_7_0_5_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInput_0_7_0_5_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInputAddr_0_7_0_5_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInput_0_7_0_5_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInputAddr_0_7_0_5_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getInput_0_7_0_5_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_0_7_0_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_0_7_0_5_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_5_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_5_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_5_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_5_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_5_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_5_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_0_7_0_5_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParam_0_7_0_5_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_5_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParam_0_7_0_5_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_5_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParam_0_7_0_5_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_5_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParam_0_7_0_5_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_5_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getParam_0_7_0_5_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getInputAddr_0_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInput_0_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.SwitchCurrents_Value" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getInputAddr_0_7_0_6_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.AC"
+%endfunction
+
+%function getInput_0_7_0_6_0_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.AC"
+%endfunction
+
+%function getInputAddr_0_7_0_6_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.IL"
+%endfunction
+
+%function getInput_0_7_0_6_0_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.IL"
+%endfunction
+
+%function getInputAddr_0_7_0_6_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInput_0_7_0_6_0_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.UnitDelay"
+%endfunction
+
+%function getInputAddr_0_7_0_6_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInput_0_7_0_6_0_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.eee_Value"
+%endfunction
+
+%function getInputAddr_0_7_0_6_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInput_0_7_0_6_1_1(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_g"
+%endfunction
+
+%function getInputAddr_0_7_0_6_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInput_0_7_0_6_1_2(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_n"
+%endfunction
+
+%function getInputAddr_0_7_0_6_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInput_0_7_0_6_1_3(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_ae"
+%endfunction
+
+%function getInputAddr_0_7_0_6_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInput_0_7_0_6_1_4(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion_a"
+%endfunction
+
+%function getInputAddr_0_7_0_6_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getInput_0_7_0_6_1_5(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.DataTypeConversion"
+%endfunction
+
+%function getOutputAddr_0_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o1" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutputAddr_0_7_0_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getOutput_0_7_0_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_B.StateSpace_o2" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_6_0_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_IWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_6_1_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_PWORK" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWorkAddr_0_7_0_6_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getDWork_0_7_0_6_2_0(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_DW.StateSpace_DSTATE" + SLibCG_ArrayIndexer(ucv, lcv, sigIdx)
+%endfunction
+
+%function getParamAddr_0_7_0_6_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParam_0_7_0_6_1_27(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_AS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_6_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParam_0_7_0_6_1_28(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_BS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_6_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParam_0_7_0_6_1_29(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_CS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_6_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParam_0_7_0_6_1_30(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_DS_param"
+%endfunction
+
+%function getParamAddr_0_7_0_6_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "&PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+
+%function getParam_0_7_0_6_1_31(opaqueBlock, block, lcv, ucv, sigIdx, reim) void
+
+%return "PVPanelAnn_P.StateSpace_X0_param"
+%endfunction
+

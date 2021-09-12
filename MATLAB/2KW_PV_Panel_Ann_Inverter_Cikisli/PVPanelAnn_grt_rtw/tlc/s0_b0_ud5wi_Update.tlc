@@ -1,0 +1,31 @@
+%implements s0_b0_ud5wi_Update "C"
+
+%function Update(block, system) Output
+%<SLibCGIRAccessLocalVar(26, 0, "")> %% rtb_IntegralGain
+%<SLibCGIRAccessLocalVar(46, 0, "")> %% rtb_Add1
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcUpdateFcnOfS0B7 = OpaqueTLCBlockFcn("Update", 0, 7, 0, 5)
+/* Update for UnitDelay: '<S91>/Unit Delay' */
+PVPanelAnn_DW.UnitDelay_DSTATE = rtb_Add1;
+%if !WHITE_SPACE(tlcUpdateFcnOfS0B7)
+/* Update for S-Function (sfun_spssw_discc): '<S101>/State-Space' incorporates:
+ *  Constant: '<S103>/SwitchCurrents'
+ *  Constant: '<S21>/eee'
+ */
+%<tlcUpdateFcnOfS0B7>\
+%endif
+/* Update for DiscreteIntegrator: '<S5>/Integrator' */
+PVPanelAnn_DW.Integrator_DSTATE += PVPanelAnn_P.Integrator_gainval * rtb_IntegralGain;
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function UpdateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Update(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 5, fcnProtoType)>
+%endfunction

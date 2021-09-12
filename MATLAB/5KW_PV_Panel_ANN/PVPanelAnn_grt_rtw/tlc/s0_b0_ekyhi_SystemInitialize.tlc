@@ -1,0 +1,86 @@
+%implements s0_b0_ekyhi_SystemInitialize "C"
+
+%function SystemInitialize(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+uint32_T tseed;
+int32_T r;
+int32_T t;
+real_T tmp;
+%closefile localVarDecl
+%assign tlcInitializeConditionsFcnOfS0B5 = OpaqueTLCBlockFcn("InitializeConditions", 0, 5, 0, 4)
+%<SLibInsertAsyncTaskInitializeCode(system)>
+%<SLibWriteMachineInitialize()>
+/* InitializeConditions for UnitDelay: '<S73>/Unit Delay' */
+PVPanelAnn_DW.UnitDelay_DSTATE = PVPanelAnn_P.UnitDelay_InitialCondition;
+/* InitializeConditions for UniformRandomNumber: '<Root>/Uniform Random Number1' */
+tmp = floor(PVPanelAnn_P.UniformRandomNumber1_Seed);
+if (rtIsNaN(tmp) || rtIsInf(tmp)) {
+    tmp = 0.0;
+} else {
+    tmp = fmod(tmp, 4.294967296E+9);
+}
+tseed = tmp < 0.0 ? (uint32_T)-(int32_T)(uint32_T)-tmp : (uint32_T)tmp;
+r = (int32_T)(tseed >> 16U);
+t = (int32_T)(tseed & 32768U);
+tseed = ((((tseed - ((uint32_T)r << 16U)) + t) << 16U) + t) + r;
+if (tseed < 1U) {
+    tseed = 1144108930U;
+} else {
+    if (tseed > 2147483646U) {
+        tseed = 2147483646U;
+    }
+}
+PVPanelAnn_DW.RandSeed = tseed;
+PVPanelAnn_DW.UniformRandomNumber1_NextOutput = (PVPanelAnn_P.UniformRandomNumber1_Maximum - PVPanelAnn_P.UniformRandomNumber1_Minimum) * %<(SLibCGCallSubFcn("rt_urand_Upu32_Yd_f_pw_snf", ["&PVPanelAnn_DW.RandSeed"], 0, 4, 0))> + PVPanelAnn_P.UniformRandomNumber1_Minimum;
+/* End of InitializeConditions for UniformRandomNumber: '<Root>/Uniform Random Number1' */
+
+/* InitializeConditions for UniformRandomNumber: '<Root>/Uniform Random Number' */
+tmp = floor(PVPanelAnn_P.UniformRandomNumber_Seed);
+if (rtIsNaN(tmp) || rtIsInf(tmp)) {
+    tmp = 0.0;
+} else {
+    tmp = fmod(tmp, 4.294967296E+9);
+}
+tseed = tmp < 0.0 ? (uint32_T)-(int32_T)(uint32_T)-tmp : (uint32_T)tmp;
+r = (int32_T)(tseed >> 16U);
+t = (int32_T)(tseed & 32768U);
+tseed = ((((tseed - ((uint32_T)r << 16U)) + t) << 16U) + t) + r;
+if (tseed < 1U) {
+    tseed = 1144108930U;
+} else {
+    if (tseed > 2147483646U) {
+        tseed = 2147483646U;
+    }
+}
+PVPanelAnn_DW.RandSeed_m = tseed;
+PVPanelAnn_DW.UniformRandomNumber_NextOutput = (PVPanelAnn_P.UniformRandomNumber_Maximum - PVPanelAnn_P.UniformRandomNumber_Minimum) * %<(SLibCGCallSubFcn("rt_urand_Upu32_Yd_f_pw_snf", ["&PVPanelAnn_DW.RandSeed_m"], 0, 4, 1))> + PVPanelAnn_P.UniformRandomNumber_Minimum;
+/* End of InitializeConditions for UniformRandomNumber: '<Root>/Uniform Random Number' */
+%if !WHITE_SPACE(tlcInitializeConditionsFcnOfS0B5)
+
+/* InitializeConditions for S-Function (sfun_spssw_discc): '<S82>/State-Space' incorporates:
+ *  Constant: '<S11>/eee'
+ *  Constant: '<S84>/SwitchCurrents'
+ */
+%<tlcInitializeConditionsFcnOfS0B5>\
+%endif
+/* InitializeConditions for DiscreteIntegrator: '<S3>/Filter' */
+PVPanelAnn_DW.Filter_DSTATE = PVPanelAnn_P.Filter_IC;
+/* InitializeConditions for DiscreteIntegrator: '<S3>/Integrator' */
+PVPanelAnn_DW.Integrator_DSTATE = PVPanelAnn_P.Integrator_IC;
+%<SLibInsertInitPeriodicCStatesFcn(system)>
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedSystemInitializeLocalVars", localVarDecl)>
+%endfunction
+%function SystemInitializeFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void SystemInitialize(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 4, fcnProtoType)>
+%endfunction

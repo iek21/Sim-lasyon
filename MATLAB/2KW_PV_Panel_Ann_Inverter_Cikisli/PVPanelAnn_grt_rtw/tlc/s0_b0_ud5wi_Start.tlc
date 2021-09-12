@@ -1,0 +1,68 @@
+%implements s0_b0_ud5wi_Start "C"
+
+%function Start(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign tlcStartFcnOfS0B7 = OpaqueTLCBlockFcn("Start", 0, 7, 0, 2)
+%assign tlcStartFcnOfS0B11 = OpaqueTLCBlockFcn("Start", 0, 11, 0, 2)
+%assign tlcStartFcnOfS0B12 = OpaqueTLCBlockFcn("Start", 0, 12, 0, 2)
+%assign tlcStartFcnOfS0B13 = OpaqueTLCBlockFcn("Start", 0, 13, 0, 2)
+%assign tlcStartFcnOfS0B14 = OpaqueTLCBlockFcn("Start", 0, 14, 0, 2)
+%assign tlcStartFcnOfS0B15 = OpaqueTLCBlockFcn("Start", 0, 15, 0, 2)
+%assign tlcStartFcnOfS0B93 = OpaqueTLCBlockFcn("Start", 0, 93, 0, 2)
+%assign tlcStartFcnOfS0B111 = OpaqueTLCBlockFcn("Start", 0, 111, 0, 2)
+%assign tlcStartFcnOfS0B112 = OpaqueTLCBlockFcn("Start", 0, 112, 0, 2)
+%if !WHITE_SPACE(tlcStartFcnOfS0B7)
+/* Start for S-Function (sfun_spssw_discc): '<S101>/State-Space' incorporates:
+ *  Constant: '<S103>/SwitchCurrents'
+ *  Constant: '<S21>/eee'
+ */
+%<tlcStartFcnOfS0B7>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B11)
+/* Start for Scope: '<Root>/Scope1' */
+%<tlcStartFcnOfS0B11>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B12)
+/* Start for Scope: '<Root>/Scope2' */
+%<tlcStartFcnOfS0B12>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B13)
+/* Start for Scope: '<Root>/Scope3' */
+%<tlcStartFcnOfS0B13>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B14)
+/* Start for Scope: '<Root>/Scope4' incorporates:
+ *  Constant: '<Root>/Constant1'
+ *  Constant: '<Root>/Constant2'
+ */
+%<tlcStartFcnOfS0B14>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B15)
+/* Start for Scope: '<Root>/Scope6' */
+%<tlcStartFcnOfS0B15>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B93)
+/* Start for Scope: '<Root>/Scope5' */
+%<tlcStartFcnOfS0B93>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B111)
+/* Start for Scope: '<Root>/Scope7' */
+%<tlcStartFcnOfS0B111>\
+%endif
+%if !WHITE_SPACE(tlcStartFcnOfS0B112)
+/* Start for Scope: '<Root>/Scope8' */
+%<tlcStartFcnOfS0B112>\
+%endif
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function StartFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Start(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 2, fcnProtoType)>
+%endfunction
